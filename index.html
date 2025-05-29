@@ -1,0 +1,1543 @@
+.research-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .research-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            font-style: italic;
+        }            .nav-cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                max-width: 300px;
+            }
+            
+            .nav-card {
+                width: 100%;
+                max-width: 280px;
+                min-width: 250px;
+            }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kathleen Desveaud, PhD - AI & Marketing Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Avenir+Next:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir Next', 'Avenir', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #fafafa;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Header with fixed navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 0;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover {
+            color: #1a1a1a;
+        }
+
+        .nav-btn.active {
+            color: #1a1a1a;
+        }
+
+        .nav-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-top: 90px;
+            min-height: 100vh;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero section */
+        .hero-section {
+            padding: 80px 40px 120px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(0,0,0,0.02) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 350px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 6px solid white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin-bottom: 0;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-text .title-accent {
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-text .description {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            padding: 16px 32px;
+            border: 2px solid #1a1a1a;
+            background: transparent;
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-btn:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cta-btn.secondary {
+            border-color: #999;
+            color: #666;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #666;
+            color: white;
+            border-color: #666;
+        }
+
+        /* Navigation cards */
+        .nav-cards {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+            flex-wrap: nowrap;
+        }
+
+        .nav-card {
+            background: white;
+            padding: 0;
+            border: 1px solid #e8e8e8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+            min-width: 200px;
+            max-width: 320px;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        .nav-card-content {
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-card-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #64748b;
+            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: #1e293b;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            line-height: 1.4;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+            border-color: #3b82f6;
+        }
+
+        .nav-card:hover .nav-card-number {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .nav-card:hover h3 {
+            color: #3b82f6;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Content sections */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: #1a1a1a;
+        }
+
+        /* Two-column layout for research interests */
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .research-card {
+            padding: 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .research-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .research-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .research-card:hover .research-image img {
+            transform: scale(1.05);
+        }
+
+        .research-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 25px 40px 15px;
+            color: #1a1a1a;
+        }
+
+        .research-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin: 0 40px 40px;
+        }
+
+        /* Research topics and methodologies */
+        /* Institution section */
+        .institution-section {
+            margin: 80px 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .institution-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .institution-image {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .institution-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .institution-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .institution-content h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .institution-content h4 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .institution-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 16px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .info-section h4 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .focus-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .focus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .focus-item:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .focus-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #002c6f, #0041a3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .focus-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        .focus-content {
+            flex: 1;
+        }
+
+        .focus-content h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .focus-content p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Publications */
+        .publication-item {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .publication-details {
+            color: #666;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        .subsection-title {
+            font-size: 2rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin: 80px 0 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .subsection-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 1px;
+            background: #ccc;
+        }
+
+        /* Timeline for teaching */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 30px 0 30px 100px;
+            margin: 40px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 35px;
+            top: 40px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 3px solid white;
+            box-shadow: 0 0 0 1px #ddd;
+        }
+
+        .timeline-year {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            letter-spacing: 0.02em;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Philosophy box */
+        .philosophy-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .philosophy-content {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .philosophy-content h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            letter-spacing: -0.01em;
+            color: #1a1a1a;
+        }
+
+        .philosophy-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+
+        .philosophy-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Media showcase */
+        .media-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .media-showcase-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .media-showcase-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .media-showcase-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .media-info {
+            padding: 25px;
+        }
+
+        .media-info h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .media-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Conference gallery */
+        .conference-gallery {
+            margin: 80px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 30px 20px 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .media-item, .conference-item {
+            background: white;
+            padding: 35px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .media-item:hover, .conference-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .media-item strong, .conference-item strong {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .media-item br + text, .conference-item br + text {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .nav-cards {
+                gap: 12px;
+                max-width: 600px;
+            }
+            
+            .nav-card {
+                min-width: 180px;
+            }
+
+            .nav-card-content {
+                padding: 30px 20px;
+            }
+
+            .nav-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .profile-photo {
+                width: 300px;
+                height: 380px;
+            }
+
+            .institution-info {
+                grid-template-columns: 1fr;
+            }
+
+            .institution-image {
+                height: 300px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .media-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 30px;
+            }
+
+            .hero-section {
+                padding: 60px 20px 80px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .profile-photo {
+                width: 250px;
+                height: 320px;
+                margin: 0 auto;
+            }
+
+            .cta-container {
+                justify-content: center;
+            }
+
+            .section-container {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .timeline {
+                margin-left: 20px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+            }
+
+            .timeline-item::before {
+                left: 15px;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-list {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-section {
+                padding: 60px 30px;
+            }
+        }
+
+        /* Loading animation */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">Kathleen Desveaud</div>
+                <div class="nav-links">
+                    <button class="nav-btn active" onclick="showSection('home')">Home</button>
+                    <button class="nav-btn" onclick="showSection('research')">Research</button>
+                    <button class="nav-btn" onclick="showSection('teaching')">Teaching</button>
+                    <button class="nav-btn" onclick="showSection('conferences')">Conferences</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <!-- HOME SECTION -->
+            <div id="home" class="content-section active">
+                <section class="hero-section">
+                    <div class="hero-content">
+                        <div class="profile-section">
+                            <div class="profile-photo">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Kathleen Desveaud" />
+                            </div>
+                        </div>
+                        <div class="hero-text">
+                            <h1>Kathleen <span class="title-accent">Desveaud</span>, PhD</h1>
+                            <p class="subtitle">Professor and Researcher in Data Marketing and Artificial Intelligence</p>
+                            <p class="description">
+                                Currently based at KEDGE Business School, where I teach AI-related courses and conduct research at the intersection of technology, psychology, and consumer decision-making. My work explores how artificial intelligence reshapes the way we engage with brands, products, and each other.
+                            </p>
+                            <div class="cta-container">
+                                <button class="cta-btn" onclick="downloadCV()">Download CV</button>
+                                <button class="cta-btn secondary" onclick="discoverBook()">Discover My AI Book</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="nav-cards">
+                    <div class="nav-card" onclick="showSection('research')">
+                        <div class="nav-card-content">
+                            <div class="nav-card-number">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189 6.01 6.01 0 001.5-.189M12 13.11V9m0 0a6.01 6.01 0 011.5.189 6.01 6.01 0 011.5.189M12 9V3.75m-3.75 14.25h7.5a3 3 0 003-3V9a3 3 0 00-3-3h-7.5a3 3 0 00-3 3v5.25a3 3 0 003 3z" />
+                                </svg>
+                            </div>
+                            <h3>Research & Publications</h3>
+                        </div>
+                    </div>
+                    <div class="nav-card" onclick="showSection('teaching')">
+                        <div class="nav-card-content">
+                            <div class="nav-card-number">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                </svg>
+                            </div>
+                            <h3>Teaching & Academia</h3>
+                        </div>
+                    </div>
+                    <div class="nav-card" onclick="showSection('conferences')">
+                        <div class="nav-card-content">
+                            <div class="nav-card-number">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                                </svg>
+                            </div>
+                            <h3>Conferences & Media</h3>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RESEARCH SECTION -->
+            <div id="research" class="content-section">
+                <div class="section-container">
+                    <h2 class="section-title">Research & Publications</h2>
+                    
+                    <div class="research-intro">
+                        <p>My research explores artificial intelligence from two complementary perspectives, examining both individual user experiences and organizational implementation strategies. This dual approach provides comprehensive insights into how AI technologies are reshaping marketing practices and consumer behavior.</p>
+                    </div>
+                    
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <div class="research-image">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Consumer Research" />
+                            </div>
+                            <h3>Consumer Perspective</h3>
+                            <p>I study how individuals perceive, adopt, or reject AI technologies. This includes issues related to trust, appropriation, and representations of automation in everyday life, focusing on the psychological and behavioral aspects of human-AI interaction.</p>
+                        </div>
+                        <div class="research-card">
+                            <div class="research-image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Business Analytics" />
+                            </div>
+                            <h3>Business Perspective</h3>
+                            <p>I examine how organizations incorporate data and AI into their marketing practices, including process transformation, ethical challenges, and customer relationship dynamics within the evolving landscape of artificial intelligence.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Research Focus Areas</h4>
+                        <div class="focus-areas-grid">
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.623 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div class="focus-content">
+                                    <h5>Consumer Trust & Algorithmic Decisions</h5>
+                                    <p>Understanding how users build trust in AI-driven systems and automated decision-making processes.</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.59-.79-1.59-1.77V9.98c0-.98.71-1.77 1.59-1.77H6.75z" />
+                                    </svg>
+                                </div>
+                                <div class="focus-content">
+                                    <h5>Voice Assistants & Human-Machine Interaction</h5>
+                                    <p>Exploring the dynamics of conversational AI and its impact on user behavior and engagement.</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </div>
+                                <div class="focus-content">
+                                    <h5>Brand Loyalty Modeling & Consumer Psychology</h5>
+                                    <p>Analyzing psychological factors that drive brand attachment and loyalty in digital environments.</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                    </svg>
+                                </div>
+                                <div class="focus-content">
+                                    <h5>Gender, Identity & AI Embodiment</h5>
+                                    <p>Investigating how gender representation in AI affects user perceptions and interaction patterns.</p>
+                                </div>
+                            </div>
+                            <div class="focus-item">
+                                <div class="focus-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                    </svg>
+                                </div>
+                                <div class="focus-content">
+                                    <h5>Data Ethics & Algorithmic Bias</h5>
+                                    <p>Examining ethical implications of AI systems and addressing bias in algorithmic decision-making.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>Methodologies</h4>
+                        <ul class="info-list">
+                            <li>Meta-analysis and structural equation modeling</li>
+                            <li>Experimental design and behavioral testing</li>
+                            <li>Quantitative modeling (R, Python)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Add KEDGE and research lab visual -->
+                    <div class="institution-section">
+                        <div class="institution-info">
+                            <div class="institution-image">
+                                <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="KEDGE Business School" />
+                            </div>
+                            <div class="institution-content">
+                                <h3>KEDGE Business School</h3>
+                                <h4>Head of Digital & Data Marketing Research Lab</h4>
+                                <p>Leading cutting-edge research in AI marketing applications, consumer behavior analysis, and ethical technology implementation. Our lab focuses on understanding how artificial intelligence transforms consumer-brand interactions and marketing practices.</p>
+                                <div class="stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">45+</span>
+                                        <span class="stat-label">Master Theses Supervised</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">15+</span>
+                                        <span class="stat-label">Publications</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">10+</span>
+                                        <span class="stat-label">International Conferences</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Academic Papers</h3>
+                    <div class="publication-item">
+                        <div class="publication-title">Gendered AI in fully autonomous vehicles: the role of social presence and competence in building trust</div>
+                        <div class="publication-details">Pavone, G., Desveaud K. (2025). Journal of Consumer Marketing, vol. 42, no. 2, pp. 240-254</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Navigating computational linguistic in marketing practices: The barriers of natural language processing in social media marketing and a path to future research</div>
+                        <div class="publication-details">Gross, J., Desveaud K. (2024). Journal of Marketing Analytics, 1–11</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">A meta-model of customer brand loyalty and its antecedents</div>
+                        <div class="publication-details">Desveaud, K., Mandler R., Eisend M. (2024). Journal of Business Research, vol. 176, pp. 114589</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Consumer Adoption of Artificial Intelligence: A Review of Theories and Antecedents</div>
+                        <div class="publication-details">Bawack R., Desveaud K. (2022). Conference Proceedings HICSS, 1–10</div>
+                    </div>
+
+                    <h3 class="subsection-title">Book</h3>
+                    <div class="publication-item">
+                        <div class="publication-title">L'intelligence artificielle décryptée: Comprendre les enjeux et risques éthiques de l'IA pour mieux l'appréhender</div>
+                        <div class="publication-details">Desveaud, K. (2024). Editions EMS, Caen, France</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEACHING SECTION -->
+            <div id="teaching" class="content-section">
+                <div class="section-container">
+                    <h2 class="section-title">Teaching & Academia</h2>
+                    
+                    <div class="philosophy-section">
+                        <div class="philosophy-image">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Teaching Philosophy" />
+                        </div>
+                        <div class="philosophy-content">
+                            <h3>Vision & Approach</h3>
+                            <p>My research philosophy centers on the conviction that artificial intelligence must be understood, mastered, and deployed ethically and responsibly. I firmly believe that technology should serve humanity, not the other way around.</p>
+                            <p>In my pedagogical approach, I emphasize hands-on learning and critical thinking. My students learn not only Big Data and Machine Learning techniques but also to question the ethical and societal implications of these technologies.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025 - Present</div>
+                            <div class="timeline-content">
+                                <strong>Understanding the strategic and ethical stakes of artificial intelligence</strong>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022 - Present</div>
+                            <div class="timeline-content">
+                                <strong>Ethics of Artificial Intelligence</strong>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021 - Present</div>
+                            <div class="timeline-content">
+                                <strong>45 master theses supervised</strong>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021 - 2022</div>
+                            <div class="timeline-content">
+                                <strong>AI & Data</strong><br>
+                                <strong>Insights & Big Data</strong><br>
+                                <strong>Data Analytics & Visualization</strong>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-year">2018 - 2021</div>
+                            <div class="timeline-content">
+                                <strong>Digital marketing, Strategic marketing, Marketing Mix</strong><br>
+                                Consumer behavior, Business Studies, Quantitative marketing, Statistics
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONFERENCES SECTION -->
+            <div id="conferences" class="content-section">
+                <div class="section-container">
+                    <h2 class="section-title">Conferences & Media</h2>
+
+                    <!-- Media showcase section -->
+                    <div class="media-showcase">
+                        <div class="media-showcase-item">
+                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="The Conversation" />
+                            <div class="media-info">
+                                <h4>The Conversation</h4>
+                                <p>Regular contributor on AI ethics and technology trends</p>
+                            </div>
+                        </div>
+                        <div class="media-showcase-item">
+                            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="BFM TV" />
+                            <div class="media-info">
+                                <h4>BFM TV</h4>
+                                <p>EdTech and AI education expert appearances</p>
+                            </div>
+                        </div>
+                        <div class="media-showcase-item">
+                            <img src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Book Launch" />
+                            <div class="media-info">
+                                <h4>Book Launch</h4>
+                                <p>"L'intelligence artificielle décryptée"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Conference images section -->
+                    <div class="conference-gallery">
+                        <h3 class="subsection-title">Conference Presentations</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="EMAC Conference" />
+                                <div class="gallery-overlay">
+                                    <h4>EMAC Annual Conference</h4>
+                                    <p>Odense, Denmark (2023)</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="AMA Conference" />
+                                <div class="gallery-overlay">
+                                    <h4>AMA Summer Conference</h4>
+                                    <p>Meta-analytic Research (2021)</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="International Marketing Trends" />
+                                <div class="gallery-overlay">
+                                    <h4>Marketing Trends Conference</h4>
+                                    <p>Paris, France (2020)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Media Appearances</h3>
+                    <div class="media-item">
+                        <strong>L'IA au travail : un gain de confort qui pourrait vous coûter cher</strong><br>
+                        The Conversation (2025)
+                    </div>
+                    <div class="media-item">
+                        <strong>Intelligence artificielle : au-delà de la hype, une bulle technologique prête à éclater?</strong><br>
+                        The Conversation (2024)
+                    </div>
+                    <div class="media-item">
+                        <strong>Kathleen Desveaud: « L'IA est l'affaire de tous ! »</strong><br>
+                        Cannes Soleil (2024)
+                    </div>
+                    <div class="media-item">
+                        <strong>Le NLP au-delà de ChatGPT</strong><br>
+                        Le Monde des Grandes Ecoles (2023)
+                    </div>
+                    <div class="media-item">
+                        <strong>C'est la Tech BB ! : Orientation: la EdTech à l'heure des choix</strong><br>
+                        BFM TV, Marseille (2023)
+                    </div>
+
+                    <h3 class="subsection-title">International Conferences</h3>
+                    <div class="conference-item">
+                        <strong>Cross-National Spillover Effects of Corporate Social Irresponsibility</strong><br>
+                        EMAC Annual Conferences, Odense, Denmark (2023)
+                    </div>
+                    <div class="conference-item">
+                        <strong>Conducting relevant generalizations of past results in Marketing research: Introduction to the one-stage meta-analytic structural equation modeling</strong><br>
+                        AMA Summer Academic Conference (2021)
+                    </div>
+                    <div class="conference-item">
+                        <strong>Increasing customer brand loyalty: Proposition of an integrative metamodel</strong><br>
+                        International Marketing Trends Conference, Paris (2020)
+                    </div>
+                    <div class="conference-item">
+                        <strong>What marketing levers are the most relevant to increase Customer Brand Loyalty?</strong><br>
+                        48th EMAC Annual Conference, Hamburg, Germany (2019)
+                    </div>
+
+                    <h3 class="subsection-title">Invited Speaker</h3>
+                    <div class="conference-item">
+                        <strong>L'intelligence artificielle : risque ou opportunité ?</strong><br>
+                        Coudekerque Branche (2025)
+                    </div>
+                    <div class="conference-item">
+                        <strong>« L'intelligence artificielle décryptée » : un guide sur l'IA de Kathleen Desveaud</strong><br>
+                        Interview for Cannes Radio (2025)
+                    </div>
+                    <div class="conference-item">
+                        <strong>Rencontre et dédicace : L'intelligence artificielle décryptée</strong><br>
+                        FNAC, Cannes (2025)
+                    </div>
+                    <div class="conference-item">
+                        <strong>L'expérience de la thèse en management, regards croisés de jeunes docteurs</strong><br>
+                        Congrès AFM, Vannes, France (2023)
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section with animation
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function downloadCV() {
+            alert('CV download functionality to be implemented');
+        }
+
+        function discoverBook() {
+            alert('Book page redirection to be implemented');
+        }
+
+        // Smooth scroll behavior for navigation cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.nav-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add a subtle animation effect
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Add parallax effect to hero section
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElement = document.querySelector('.hero-section::before');
+                if (parallaxElement) {
+                    const speed = scrolled * 0.5;
+                    parallaxElement.style.transform = `translateY(${speed}px)`;
+                }
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            const animateElements = document.querySelectorAll('.publication-item, .timeline-item, .research-card, .nav-card');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Enhanced mobile menu functionality
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+
+        // Add smooth transitions between sections
+        function smoothTransition(targetSection) {
+            targetSection.style.opacity = '0';
+            targetSection.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                targetSection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                targetSection.style.opacity = '1';
+                targetSection.style.transform = 'translateY(0)';
+            }, 50);
+        }
+
+        // Enhanced scroll behavior
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
