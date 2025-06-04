@@ -282,7 +282,7 @@
             flex: 1;
             min-width: 200px;
             max-width: 320px;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
@@ -295,18 +295,33 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
+            background: linear-gradient(to bottom, transparent, transparent) no-repeat center/100% 0%;
+            transition: all 0.3s ease;
         }
 
         .nav-card-number {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            width: 48px;
+            height: 48px;
+            background: #f8f9fa;
             border: 1px solid #e0e0e0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-card-number::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            font-family: system-ui;
+            font-size: 1.2rem;
+            color: #2c2c2c;
         }
 
         .nav-card-number svg {
@@ -326,17 +341,42 @@
             letter-spacing: -0.01em;
             transition: all 0.3s ease;
             line-height: 1.4;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .nav-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #2c2c2c;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
 
         .nav-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
             border-color: #2c2c2c;
+        }
+
+        .nav-card:hover .nav-card-content {
+            background-size: 100% 100%;
+            background-image: linear-gradient(to bottom, transparent, rgba(44, 44, 44, 0.03));
         }
 
         .nav-card:hover .nav-card-number {
             background: #2c2c2c;
             border-color: #2c2c2c;
+            transform: scale(1.05);
+        }
+
+        .nav-card:hover .nav-card-number::after {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .nav-card:hover .nav-card-number svg {
@@ -348,21 +388,13 @@
             color: #2c2c2c;
         }
 
-        .nav-card::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #2c2c2c;
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.3s ease;
+        .nav-card:hover h3::after {
+            width: 40px;
         }
 
-        .nav-card:hover::before {
-            transform: scaleX(1);
+        .nav-card:active {
+            transform: translateY(0);
+            transition: all 0.1s ease;
         }
 
         /* Content sections */
