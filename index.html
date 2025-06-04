@@ -1180,6 +1180,126 @@
             font-size: 1rem;
             margin: 0;
         }
+
+        /* Book showcase styles */
+        .book-showcase {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .book-cover {
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .book-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .book-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+
+        .book-description ul {
+            margin: 0.5em 0;
+            padding-left: 1.2em;
+        }
+
+        .book-description li {
+            margin: 0.3em 0;
+        }
+
+        .book-purchase {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .purchase-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .purchase-link .purchase-icon {
+            margin-left: 8px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .purchase-link:hover .purchase-icon {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+
+        .purchase-link.amazon {
+            background-color: #232F3E;
+            color: white;
+        }
+
+        .purchase-link.fnac {
+            background-color: #E1A526;
+            color: white;
+        }
+
+        .purchase-link.ems {
+            background-color: #2C5282;
+            color: white;
+        }
+
+        .purchase-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .book-showcase {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .book-cover {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .book-purchase {
+                flex-direction: column;
+            }
+
+            .purchase-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1266,10 +1386,9 @@
                             </div>
                             <h3>Consumer Perspective</h3>
                             <p>I study how individuals perceive, adopt, or reject AI technologies. This includes issues related to trust, appropriation, and representations of automation in everyday life, focusing on the psychological and behavioral aspects of human-AI interaction.</p>
-                        </div>
-                        <div class="research-card">
+                        </div>                        <div class="research-card">
                             <div class="research-image">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Business Analytics" />
+                                <img src="images/business perspective.png" alt="Business Analytics" />
                             </div>
                             <h3>Business Perspective</h3>
                             <p>I examine how organizations incorporate data and AI into their marketing practices, including process transformation, ethical challenges, and customer relationship dynamics within the evolving landscape of artificial intelligence.</p>
@@ -1336,9 +1455,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>                    <h3 class="subsection-title">Academic Papers</h3>
+                    <div class="research-intro" style="margin-bottom: 30px;">
+                        <p>The following articles have been published in leading peer-reviewed academic journals, representing significant contributions to the fields of marketing, consumer behavior, and artificial intelligence. Each paper has undergone rigorous peer review, ensuring the highest standards of academic quality and research integrity.</p>
                     </div>
-
-                    <h3 class="subsection-title">Academic Papers</h3>
                     <div class="publication-item">
                         <div class="publication-title">Gendered AI in fully autonomous vehicles: the role of social presence and competence in building trust</div>
                         <div class="publication-details">Pavone, G., Desveaud K. (2025). Journal of Consumer Marketing, vol. 42, no. 2, pp. 240-254</div>
@@ -1354,12 +1474,46 @@
                     <div class="publication-item">
                         <div class="publication-title">Consumer Adoption of Artificial Intelligence: A Review of Theories and Antecedents</div>
                         <div class="publication-details">Bawack R., Desveaud K. (2022). Conference Proceedings HICSS, 1–10</div>
-                    </div>
-
-                    <h3 class="subsection-title">Book</h3>
-                    <div class="publication-item">
-                        <div class="publication-title">L'intelligence artificielle décryptée: Comprendre les enjeux et risques éthiques de l'IA pour mieux l'appréhender</div>
-                        <div class="publication-details">Desveaud, K. (2024). Editions EMS, Caen, France</div>
+                    </div>                    <h3 class="subsection-title">Book</h3>
+                    <div class="book-showcase">
+                        <div class="book-image">
+                            <img src="images/book-cover.jpg" alt="Couverture du livre L'intelligence artificielle décryptée" class="book-cover">
+                        </div>
+                        <div class="book-details">
+                            <h4 class="book-title">L'intelligence artificielle décryptée</h4>
+                            <h5 class="book-subtitle">Comprendre les enjeux et risques éthiques de l'IA pour mieux l'appréhender</h5>                            <div class="book-description">
+                                <p>Through a comprehensive and accessible analysis, the book offers:</p>
+                                <ul>
+                                    <li>A comprehensive overview of AI technologies and their functioning</li>
+                                    <li>An exploration of ethical and societal challenges</li>
+                                    <li>Concrete AI application examples</li>
+                                    <li>Perspectives on the future of AI across various sectors</li>
+                                </ul>
+                                <p>An essential guide for anyone looking to understand and master the impacts of AI in their professional and personal lives.</p>
+                            </div>
+                            <div class="publication-details">
+                                <strong>Publication Date:</strong> January 2024<br>
+                                <strong>Publisher:</strong> Editions EMS, Caen<br>
+                                <strong>Pages:</strong> 248<br>
+                                <strong>ISBN:</strong> 978-2-XXXXX-XXX-X                            </div>                            <div class="book-purchase">                                <a href="https://www.amazon.fr/intelligence-artificielle-decryptee-Kathleen-Desveaud/dp/XXXXXXXXXX" class="purchase-link amazon" target="_blank">
+                                    Amazon
+                                    <svg class="purchase-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </a>
+                                <a href="https://www.fnac.com/SearchResult/ResultList.aspx?Search=intelligence+artificielle+decryptee+kathleen+desveaud" class="purchase-link fnac" target="_blank">
+                                    Fnac
+                                    <svg class="purchase-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </a>
+                                <a href="https://www.editions-ems.fr/livres/collections/versus/ouvrage/531-l-intelligence-artificielle-decryptee.html" class="purchase-link ems" target="_blank">
+                                    Editions EMS
+                                    <svg class="purchase-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
