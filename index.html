@@ -191,10 +191,8 @@
 
         .hero-text {
             text-align: left;
-        }
-
-        .hero-text h1 {
-            font-size: 4.5rem;
+        }        .hero-text h1 {
+            font-size: 3.5rem;
             font-weight: 300;
             margin-bottom: 20px;
             color: #1a1a1a;
@@ -273,12 +271,10 @@
             margin: 0 auto;
             padding: 0 40px;
             flex-wrap: nowrap;
-        }
-
-        .nav-card {
+        }        .nav-card {
             background: white;
             padding: 0;
-            border: 1px solid #e8e8e8;
+            border: 1px solid #e0e0e0;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
@@ -286,71 +282,82 @@
             flex: 1;
             min-width: 200px;
             max-width: 320px;
-            border-radius: 16px;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .nav-card-content {
-            padding: 40px 30px;
+            padding: 35px 25px;
             text-align: center;
             position: relative;
             z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .nav-card-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e0e0e0;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #64748b;
-            margin: 0 auto 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-card-number svg {
+            width: 20px;
+            height: 20px;
+            color: #2c2c2c;
+            opacity: 0.8;
             transition: all 0.3s ease;
         }
 
         .nav-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
             margin: 0;
-            color: #1e293b;
+            color: #2c2c2c;
             letter-spacing: -0.01em;
             transition: all 0.3s ease;
             line-height: 1.4;
         }
 
         .nav-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-color: #2c2c2c;
         }
 
         .nav-card:hover .nav-card-number {
-            background: #3b82f6;
-            border-color: #3b82f6;
+            background: #2c2c2c;
+            border-color: #2c2c2c;
+        }
+
+        .nav-card:hover .nav-card-number svg {
             color: white;
-            transform: scale(1.1);
+            opacity: 1;
         }
 
         .nav-card:hover h3 {
-            color: #3b82f6;
+            color: #2c2c2c;
         }
 
         .nav-card::before {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            height: 2px;
+            background: #2c2c2c;
             transform: scaleX(0);
-            transform-origin: left;
+            transform-origin: center;
             transition: transform 0.3s ease;
         }
 
@@ -1047,9 +1054,8 @@
             <div id="home" class="content-section active">
                 <section class="hero-section">
                     <div class="hero-content">
-                        <div class="profile-section">
-                            <div class="profile-photo">
-                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Kathleen Desveaud" />
+                        <div class="profile-section">                            <div class="profile-photo">
+                                <img src="images/photo_profil.jpg" alt="Kathleen Desveaud" />
                             </div>
                         </div>
                         <div class="hero-text">
@@ -1064,14 +1070,12 @@
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section class="nav-cards">
+                </section>                <section class="nav-cards" style="margin-bottom: 60px;">
                     <div class="nav-card" onclick="showSection('research')">
                         <div class="nav-card-content">
                             <div class="nav-card-number">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189 6.01 6.01 0 001.5-.189M12 13.11V9m0 0a6.01 6.01 0 011.5.189 6.01 6.01 0 011.5.189M12 9V3.75m-3.75 14.25h7.5a3 3 0 003-3V9a3 3 0 00-3-3h-7.5a3 3 0 00-3 3v5.25a3 3 0 003 3z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.905 59.905 0 0 1 12 3.493a59.902 59.902 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                                 </svg>
                             </div>
                             <h3>Research & Publications</h3>
@@ -1081,7 +1085,7 @@
                         <div class="nav-card-content">
                             <div class="nav-card-number">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                                 </svg>
                             </div>
                             <h3>Teaching & Academia</h3>
@@ -1091,7 +1095,7 @@
                         <div class="nav-card-content">
                             <div class="nav-card-number">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
                                 </svg>
                             </div>
                             <h3>Conferences & Media</h3>
