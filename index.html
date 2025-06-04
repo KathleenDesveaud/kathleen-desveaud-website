@@ -913,6 +913,41 @@
             font-style: italic;
         }
 
+        /* Accreditation logos grid */
+        .accreditation-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .accreditation-item {
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .accreditation-item img {
+            max-width: 120px;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .accreditation-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .accreditation-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
         /* Mobile responsiveness */
         @media (max-width: 1024px) {
             .research-grid {
@@ -1282,23 +1317,22 @@
                             <div class="institution-image">
                                 <img src="images/kedge.jpg" alt="KEDGE Business School" />
                             </div>
-                            <div class="institution-content">
-                                <h3>KEDGE Business School</h3>
+                            <div class="institution-content">                                <h3>KEDGE Business School</h3>
                                 <h4>Head of Digital & Data Marketing Research Lab</h4>
-                                <p>Leading cutting-edge research in AI marketing applications, consumer behavior analysis, and ethical technology implementation. Our lab focuses on understanding how artificial intelligence transforms consumer-brand interactions and marketing practices.</p>
-                                <div class="stats">
-                                    <div class="stat-item">
-                                        <span class="stat-number">45+</span>
-                                        <span class="stat-label">Master Theses Supervised</span>
+                                <div class="accreditation-grid">
+                                    <div class="accreditation-item">
+                                        <img src="images/aacsb.png" alt="AACSB Accreditation" />
                                     </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">15+</span>
-                                        <span class="stat-label">Publications</span>
+                                    <div class="accreditation-item">
+                                        <img src="images/equis.png" alt="EQUIS Accreditation" />
                                     </div>
-                                    <div class="stat-item">
-                                        <span class="stat-number">10+</span>
-                                        <span class="stat-label">International Conferences</span>
+                                    <div class="accreditation-item">
+                                        <img src="images/amba.png" alt="AMBA Accreditation" />
                                     </div>
+                                    <div class="accreditation-item">
+                                        <img src="images/cge.png" alt="Conférence des Grandes Écoles" />
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
