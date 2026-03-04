@@ -256,7 +256,7 @@
         }
 
         /* Two-column layout for research interests */
-        .research-grid {
+        .research-perspectives-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -264,48 +264,124 @@
         }
 
         .research-card {
-            padding: 0;
+            padding: 35px;
             background: white;
             border: 1px solid #e0e0e0;
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
         }
 
         .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            border-color: #d0d0d0;
+        }
+
+        .research-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .research-card-header h3 {
+            margin: 0;
+        }
+
+        .research-card-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .research-card-icon svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .consumer-perspective-icon {
+            background: rgba(59, 130, 246, 0.12);
+            color: #3b82f6;
+        }
+
+        .business-perspective-icon {
+            background: rgba(168, 85, 247, 0.12);
+            color: #a855f7;
+        }
+
+        .research-card:hover .consumer-perspective-icon {
+            background: #3b82f6;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .research-card:hover .business-perspective-icon {
+            background: #a855f7;
+            color: white;
+            transform: scale(1.1);
         }
 
         .research-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
+            display: none;
         }
 
         .research-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            display: none;
         }
 
         .research-card:hover .research-image img {
-            transform: scale(1.05);
+            transform: scale(1.06);
+        }
+
+        .research-content {
+            flex: 1;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
         .research-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 600;
-            margin: 25px 40px 15px;
             color: #1a1a1a;
+            margin: 0;
         }
 
         .research-card p {
             color: #666;
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin: 0 40px 40px;
+            line-height: 1.7;
+            font-size: 0.98rem;
+            margin: 0;
+        }
+
+        /* Research introduction section styling */
+        .research-intro {
+            margin-bottom: 60px;
+            text-align: center;
+            padding: 35px 40px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .research-intro p {
+            font-size: 1.12rem;
+            color: #555;
+            line-height: 1.85;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
 
         /* Research topics and methodologies */
@@ -468,29 +544,97 @@
         /* Publications */
         .publication-item {
             background: white;
-            padding: 40px;
+            padding: 30px;
             margin: 30px 0;
             border: 1px solid #e0e0e0;
-            border-left: 4px solid #1a1a1a;
+            border-radius: 12px;
             transition: all 0.3s ease;
+            display: flex;
+            gap: 30px;
+            align-items: center;
         }
 
         .publication-item:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            border-color: #d0d0d0;
+        }
+
+        .publication-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 12px;
+        }
+
+        .publication-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .publication-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .publication-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: #1a1a1a;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.5;
         }
 
         .publication-details {
             color: #666;
             font-style: italic;
-            font-size: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .publication-image {
+            flex-shrink: 0;
+            width: 200px;
+            height: 130px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .publication-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-item:hover .publication-image img {
+            transform: scale(1.08);
+        }
+
+        /* Book chapter styling */
+        .publication-item:has(.publication-image:first-child) .publication-image {
+            width: 110px;
+            height: 160px;
+            border-radius: 8px;
+            box-shadow: 4px 8px 20px rgba(0,0,0,0.15), 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .publication-item:has(.publication-image:first-child) .publication-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+            border-radius: 8px;
+            pointer-events: none;
         }
 
         .subsection-title {
@@ -638,7 +782,7 @@
 
         .media-showcase-item img {
             width: 100%;
-            height: 200px;
+            height: 320px;
             object-fit: cover;
         }
 
@@ -917,12 +1061,23 @@
             .philosophy-section {
                 padding: 60px 30px;
             }
-        }
 
-        /* Teaching section specific styles */
-        .philosophy-section {
-            /* SUPPRIME display: flex; gap: 40px; */
-            /* margin-bottom: 60px; déjà défini plus haut */
+            .publication-item {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .publication-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .publication-image {
+                width: 100%;
+                height: 220px;
+                order: -1;
+            }
         }
 
         /* Loading animation */
@@ -1336,23 +1491,39 @@
                     <h2 class="section-title">Research & Publications</h2>
                     
                     <div class="research-intro">
-                        <p>My research explores artificial intelligence from two complementary perspectives, examining both individual user experiences and organizational implementation strategies. This dual approach provides comprehensive insights into how AI technologies are reshaping marketing practices and consumer behavior.</p>
+                        <p>My research explores artificial intelligence through <strong>two complementary lenses</strong>: understanding how <strong>individuals experience and adopt</strong> AI technologies, and examining how <strong>organizations strategically implement</strong> these tools in their marketing practices.</p>
                     </div>
-                      <div class="research-grid">
+                    
+                    <div class="research-perspectives-container">
                         <div class="research-card">
-                            <div class="research-image">
-                                <img src="images/consumer_perspective.png" alt="Consumer Research" />
+                            <div class="research-card-header">
+                                <div class="research-card-icon consumer-perspective-icon">
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-0.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l0.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-0.9-2-2-2z"/>
+                                    </svg>
+                                </div>
+                                <h3>Consumer Perspective</h3>
                             </div>
-                            <h3>Consumer Perspective</h3>
-                            <p>I study how individuals perceive, adopt, or reject AI technologies. This includes issues related to trust, appropriation, and representations of automation in everyday life, focusing on the psychological and behavioral aspects of human-AI interaction.</p>
-                        </div>                        <div class="research-card">
-                            <div class="research-image">
-                                <img src="images/business perspective.png" alt="Business Analytics" />
+                            <div class="research-content">
+                                <p>I study how individuals perceive, adopt, or reject AI technologies. This includes issues related to trust, appropriation, and representations of automation in everyday life, focusing on the psychological and behavioral aspects of human-AI interaction.</p>
                             </div>
-                            <h3>Business Perspective</h3>
-                            <p>I examine how organizations incorporate data and AI into their marketing practices, including process transformation, ethical challenges, and customer relationship dynamics within the evolving landscape of artificial intelligence.</p>
                         </div>
-                    </div>                    <div class="info-section">
+                        
+                        <div class="research-card">
+                            <div class="research-card-header">
+                                <div class="research-card-icon business-perspective-icon">
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                                    </svg>
+                                </div>
+                                <h3>Business Perspective</h3>
+                            </div>
+                            <div class="research-content">
+                                <p>I examine how organizations incorporate data and AI into their marketing practices, including process transformation, ethical challenges, and customer relationship dynamics within the evolving landscape of artificial intelligence.</p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="info-section">
                         <h4>Research Focus Areas</h4>
                         <div class="research-focus-image">
                             <img src="images/research_focus.svg" alt="Research Focus Areas Overview" />
@@ -1419,20 +1590,88 @@
                         <p>The following articles have been published in leading peer-reviewed academic journals, representing significant contributions to the fields of marketing, consumer behavior, and artificial intelligence. Each paper has undergone rigorous peer review, ensuring the highest standards of academic quality and research integrity.</p>
                     </div>
                     <div class="publication-item">
-                        <div class="publication-title">Gendered AI in fully autonomous vehicles: the role of social presence and competence in building trust</div>
-                        <div class="publication-details">Pavone, G., Desveaud K. (2025). Journal of Consumer Marketing, vol. 42, no. 2, pp. 240-254</div>
+                        <div class="publication-icon">
+                            <img src="images/journal-tfsc.png" alt="Technological Forecasting and Social Change" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">AI driver or assistant? The impact of gendered interfaces on disempowerment dynamics in fully autonomous vehicles</div>
+                            <div class="publication-details">Desveaud, K., & Pavone, G. (2025). Technological Forecasting and Social Change, vol. 219, pp. 124259</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-autonomous-vehicles.jpg" alt="Autonomous Vehicles" />
+                        </div>
                     </div>
                     <div class="publication-item">
-                        <div class="publication-title">Navigating computational linguistic in marketing practices: The barriers of natural language processing in social media marketing and a path to future research</div>
-                        <div class="publication-details">Gross, J., Desveaud K. (2024). Journal of Marketing Analytics, 1–11</div>
+                        <div class="publication-icon">
+                            <img src="images/journal-ijmr.png" alt="International Journal of Market Research" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Integrating the Literature on AI Adoption: A Socio-Technical Framework</div>
+                            <div class="publication-details">Desveaud, K., & Bawack, R. (2025). International Journal of Market Research, vol. 14707853251383383</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-ai-adoption.jpg" alt="AI Adoption Framework" />
+                        </div>
                     </div>
                     <div class="publication-item">
-                        <div class="publication-title">A meta-model of customer brand loyalty and its antecedents</div>
-                        <div class="publication-details">Desveaud, K., Mandler R., Eisend M. (2024). Journal of Business Research, vol. 176, pp. 114589</div>
+                        <div class="publication-icon">
+                            <img src="images/journal-ecr.png" alt="Electronic Commerce Research" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">More than words: consumers' emotional responses to visual and textual stimuli in online applications</div>
+                            <div class="publication-details">Prévot, F., Desveaud, K., Pavone, G., & Beliakova, A. (2025). Electronic Commerce Research, 1–24</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-emotional-responses.jpg" alt="Consumer Emotions" />
+                        </div>
                     </div>
                     <div class="publication-item">
-                        <div class="publication-title">Consumer Adoption of Artificial Intelligence: A Review of Theories and Antecedents</div>
-                        <div class="publication-details">Bawack R., Desveaud K. (2022). Conference Proceedings HICSS, 1–10</div>
+                        <div class="publication-icon">
+                            <img src="images/journal-jcm.png" alt="Journal of Consumer Marketing" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Gendered AI in fully autonomous vehicles: the role of social presence and competence in building trust</div>
+                            <div class="publication-details">Pavone, G., Desveaud K. (2025). Journal of Consumer Marketing, vol. 42, no. 2, pp. 240-254</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-gendered-ai.jpg" alt="Gendered AI Trust" />
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-icon">
+                            <img src="images/journal-jma.png" alt="Journal of Marketing Analytics" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Navigating computational linguistic in marketing practices: The barriers of natural language processing in social media marketing and a path to future research</div>
+                            <div class="publication-details">Gross, J., Desveaud K. (2024). Journal of Marketing Analytics, 1–11</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-nlp-marketing.jpg" alt="NLP Marketing" />
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-icon">
+                            <img src="images/journal-jbr.png" alt="Journal of Business Research" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">A meta-model of customer brand loyalty and its antecedents</div>
+                            <div class="publication-details">Desveaud, K., Mandler R., Eisend M. (2024). Journal of Business Research, vol. 176, pp. 114589</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-brand-loyalty.jpg" alt="Brand Loyalty" />
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-icon">
+                            <img src="images/journal-mds.png" alt="Management & Datascience" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Stakes and challenges in building and analyzing a client database: A case study of a French company</div>
+                            <div class="publication-details">Desveaud, K., & Mallol, J. (2019). Management & Datascience, vol. 3, no. 3</div>
+                        </div>
+                        <div class="publication-image">
+                            <img src="images/paper-database.jpg" alt="Client Database" />
+                        </div>
                     </div>                    <h3 class="subsection-title">Book</h3>
                     <div class="book-showcase">
                         <div class="book-image">
@@ -1451,10 +1690,10 @@
                                 <p>An essential guide for anyone looking to understand and master the impacts of AI in their professional and personal lives.</p>
                             </div>
                             <div class="publication-details">
-                                <strong>Publication Date:</strong> January 2024<br>
+                                <strong>Publication Date:</strong> March 28, 2024<br>
                                 <strong>Publisher:</strong> Editions EMS, Caen<br>
-                                <strong>Pages:</strong> 248<br>
-                                <strong>ISBN:</strong> 978-2-XXXXX-XXX-X                            </div>                            <div class="book-purchase">                                <a href="https://www.amazon.fr/intelligence-artificielle-decryptee-Kathleen-Desveaud/dp/XXXXXXXXXX" class="purchase-link amazon" target="_blank">
+                                <strong>Pages:</strong> 280<br>
+                                <strong>ISBN:</strong> 978-2-37687-960-2                            </div>                            <div class="book-purchase">                                <a href="https://www.amazon.fr/intelligence-artificielle-decryptee-Kathleen-Desveaud/dp/XXXXXXXXXX" class="purchase-link amazon" target="_blank">
                                     Amazon
                                     <svg class="purchase-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -1472,6 +1711,44 @@
                                     </svg>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-title">Book Chapters</h3>
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="images/bookchapter-ai-marketing.png" alt="AI-Generated Marketing Content" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Consumer Perceptions of AI-Generated Marketing Content</div>
+                            <div class="publication-details">Desveaud, K., & Pavone, G. (2025). In Encyclopedia of Artificial Intelligence in Marketing (pp. 1-7). Cham: Springer Nature Switzerland</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="images/bookchapter-ai-marketing.png" alt="Social Language Intelligence" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Social Language Intelligence for Social Media Marketing</div>
+                            <div class="publication-details">Desveaud, K., & Gross, J. (2025). In Encyclopedia of Artificial Intelligence in Marketing (pp. 1-7). Cham: Springer Nature Switzerland</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="images/bookchapter-chatbots.jpeg" alt="Chatbots Marketing" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Strategic implications of chatbots in marketing: Exploring applications and factors of customer acceptance</div>
+                            <div class="publication-details">Pavone, G., & Desveaud, K. (2024). In The Impact of Digitalization on Current Marketing Strategies (chap 1). Emerald Publishing Limited</div>
+                        </div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-image">
+                            <img src="images/bookchapter-methodes-recherche.png" alt="Méthodes de Recherche Quantitatives" />
+                        </div>
+                        <div class="publication-content">
+                            <div class="publication-title">Les méthodes de recherche quantitatives: une expérience de thèse en 10 conseils</div>
+                            <div class="publication-details">Desveaud, K. (2023). In L'expérience de la thèse en management (No. hal-04065772). Editions EMS</div>
                         </div>
                     </div>
                 </div>
